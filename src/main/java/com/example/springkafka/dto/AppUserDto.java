@@ -12,7 +12,7 @@ public class AppUserDto {
     private Date date;
 
     public AppUserDto() {
-        this.name = "IRobot, my name ";
+        this.name = "IRobot";
         this.date = Calendar.getInstance().getTime();
     }
 }
