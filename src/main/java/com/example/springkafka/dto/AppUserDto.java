@@ -26,5 +26,4 @@ public class AppUserDto {
     public List<Object> getListDto() {
         return listDto;
     }
-=
 }
