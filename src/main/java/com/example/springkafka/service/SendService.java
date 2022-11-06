@@ -18,10 +18,9 @@ public class SendService {
 
     public void generationDto(RecordData recordData){
         String topic;
-        List<AppUserDto> appUserDtoList = new ArrayList<>();
-        int count = recordData.size();
+        List<AppUserDto> appUserDtoList = new ArrayList<>(recordData.size());
         topic = recordData.topic();
-        for(int i = 0; i<count; i++){
+        for(int i = 0; i<recordData.size(); i++){
             appUserDtoList.add(new AppUserDto());
         }
         kafkaTemplate.send(topic, appUserDtoList);
