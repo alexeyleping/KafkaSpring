@@ -17,12 +17,10 @@ public class SendService {
     }
 
     public void generationDto(RecordData recordData){
-        String topic;
         List<AppUserDto> appUserDtoList = new ArrayList<>(recordData.size());
-        topic = recordData.topic();
         for(int i = 0; i<recordData.size(); i++){
             appUserDtoList.add(new AppUserDto());
         }
-        kafkaTemplate.send(topic, appUserDtoList);
+        kafkaTemplate.send(recordData.topic(), appUserDtoList);
     }
 }
