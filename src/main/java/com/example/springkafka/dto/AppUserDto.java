@@ -1,10 +1,7 @@
 package com.example.springkafka.dto;
 
-import java.sql.Time;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 public class AppUserDto {
 
