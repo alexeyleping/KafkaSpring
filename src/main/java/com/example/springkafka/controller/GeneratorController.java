@@ -1,6 +1,6 @@
 package com.example.springkafka.controller;
 
-import com.example.springkafka.dto.AppUserDto;
+import com.example.springkafka.dto.RecordData;
 import com.example.springkafka.service.SendService;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +15,7 @@ public class GeneratorController {
     }
 
     @PostMapping
-    public void createMsg(@RequestBody AppUserDto appUserDto){
-        sendService.produce(appUserDto);
+    public void createMsg(@RequestBody RecordData recordData){
+        sendService.generationDto(recordData);
     }
 }
