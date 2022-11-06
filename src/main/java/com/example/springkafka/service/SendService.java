@@ -15,10 +15,10 @@ public class SendService {
     }
 
     public void send(AppUserDto dto) {
-        kafkaTemplate.send("server.topic1", dto);
+        kafkaTemplate.send(dto.getTopicName(), dto.getListDto());
     }
 
     public void produce(AppUserDto dto) {
-        kafkaTemplate.send("test", dto);
+        kafkaTemplate.send(dto.getTopicName(), dto.getListDto());
     }
 }
