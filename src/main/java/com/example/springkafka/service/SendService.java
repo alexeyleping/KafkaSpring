@@ -1,25 +1,24 @@
 package com.example.springkafka.service;
 
 
-import com.example.springkafka.config.dto.AppUserDto;
+import com.example.springkafka.dto.AppUserDto;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 @Service
 public class SendService {
 
-    private final KafkaTemplate<Long, AppUserDto> kafkaStarshipTemplate;
+    private final KafkaTemplate<String, Object> kafkaTemplate;
 
-    public SendService(KafkaTemplate<Long, AppUserDto> kafkaStarshipTemplate) {
-        this.kafkaStarshipTemplate = kafkaStarshipTemplate;
+    public SendService(KafkaTemplate<String, Object> kafkaTemplate) {
+        this.kafkaTemplate = kafkaTemplate;
     }
 
     public void send(AppUserDto dto) {
-        kafkaStarshipTemplate.send("server.topic1", dto);
+        kafkaTemplate.send("server.topic1", dto);
     }
 
-    public void produce() {
-        AppUserDto dto = new AppUserDto("TestMsg");
-        kafkaStarshipTemplate.send("test", dto);
+    public void produce(AppUserDto dto) {
+        kafkaTemplate.send("test", dto);
     }
 }

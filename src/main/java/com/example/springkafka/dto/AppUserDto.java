@@ -1,11 +1,8 @@
-package com.example.springkafka.config.dto;
+package com.example.springkafka.dto;
 
 public class AppUserDto {
 
     private String name;
-
-    public AppUserDto() {
-    }
 
     public AppUserDto(String name) {
         this.name = name;
